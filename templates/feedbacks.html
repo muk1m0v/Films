@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Отзывы{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock extra_css %}
+
+{% block context %}
+    <div class="feedbacks">
+        {% for feedback in feedbacks %}
+            <div class="feedback-item">
+                <h4>{{ feedback.id }}</h4>
+                <h3>{{ feedback.name }}</h3>
+                <p>{{ feedback.message }}</p>
+            </div>
+        {% empty %}
+            <p>Нет отзывов.</p>
+        {% endfor %}
+    </div>
+{% endblock context %}

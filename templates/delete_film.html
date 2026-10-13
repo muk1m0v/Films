@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Delete Film{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock extra_css %}
+{% block context %}
+    <div class="form">
+        <h1>Удалить Фыльм</h1>
+        <p>Вы уверены, что хотите удалить {{ film.title }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="Enter">Да, удалить</button>
+            <a href="{% url 'home' %}" class="Enter">Отмена</a>
+        </form>
+    </div>
+{% endblock context %}

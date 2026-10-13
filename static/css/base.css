@@ -1,0 +1,71 @@
+* {
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+::selection {
+    color: darkred;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: darkred;
+    color: white;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 18px;
+}
+
+select {
+    color: darkred;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+input {
+    color: darkred;
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+}
+
+option {
+    color: darkred;
+    font-size: 18px;
+    background-color: rgb(44, 1, 1);
+}
+
+textarea {
+    border: 1px solid darkred;
+    color: darkred;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    padding: 10px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: rgb(51, 0, 0);
+    color:white;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-link {
+    background: none;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+}

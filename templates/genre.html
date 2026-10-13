@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Жанры{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock extra_css %}
+{% block context %}
+    <div class="genres">
+        {% for genre in genres %}
+            <div class="genre-item">
+                <h4>{{ genre.name }}</h4>
+            </div>
+        {% empty %}
+            <p>Нет жанров.</p>
+        {% endfor %}
+    </div>
+{% endblock context %}

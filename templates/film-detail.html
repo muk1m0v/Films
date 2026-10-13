@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Film {{ film.title}}{% endblock title%}
+{% block extra_css%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock extra_css %}
+    {% block context %}
+    <div class="card">
+        <div class="film-item">
+            <img src="{{ film.poster.url }}" alt="{{ film.title }}">
+        </div>
+        <div class="def">
+            <h1 class="title">{{ film.title }}</h1>
+            <h4 class="caption">{{ film.caption }}</h4>
+            <h4 class="year">Год выпуска: {{ film.release_year }}</h4>
+            <h4 class="rating">Рейтинг: {{ film.rating }}</h4>
+            <h4 class="genre">Категория: {{ film.genre.name }}</h4>
+            <h4 style="display: inline-block; color: rgb(104, 69, 4); padding: 10px; font-size: 16px;">{{ film.rating }}</h4> | <h4 style="display: inline-block;">{{ film.release_year }}</h4><br>
+            <button style="display: inline-block;" class="Enter"><a href="{% url 'update_film' film.id %}">Редактировать</a></button>
+            <button style="display: inline-block;" class="Enter"><a href="{% url 'delete_film' film.id %}">Удалить</a></button>
+        </div>
+    </div>
+    {% endblock context%}

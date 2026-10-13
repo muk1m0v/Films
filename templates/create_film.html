@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Create Film{% endblock title%}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+{% endblock extra_css %}
+    {% block context%}
+    <div class="form">
+        <h1>Создать Фыльм</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Название Фыльма"><br><br>
+            <input type="text" name="caption" id="caption" placeholder="Описание Фыльма"><br><br>
+            <input type="number" name="release_year" step="1" placeholder="Год Выпуска">
+            <input type="number" name="rating" step="0.1" placeholder="Рейтинг"><br><br>
+            <input type="file" name="poster" class="Enter"><br><br>
+            <select name="genre">
+                {% for genre in genreis %}
+                    <option value="{{ genre.id }}">{{ genre.name }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <button type="submit" class="Enter">Создать Фыльма</button>
+    </form>
+    </div>
+    {% endblock context%}

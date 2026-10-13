@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Контакты{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock extra_css %}
+
+{% block context %}
+    <div class="con" style="margin-top: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
+        <h2>Контактная информация</h2>
+        <p>Телефон: +992 800607070</p>
+        <p>WhatsApp: +992 800607070</p>
+        <p>Telegram: @itfilms</p>
+        <p>Instagram: @itfilms</p>
+        <p>Адрес: г. Душанбе, ул. Ленина, д. 10</p>
+        <p>Email: info@itfilms.com</p>
+        <h4>Просба не если появиться время то не звоните!</h4>
+    </div>
+    <div class="feedback">
+        <h2>Обратная связь</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="name" name="name"  placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Ваше сообщение" required></textarea>
+            </div>
+            <button type="submit" class="Enter">Отправить</button>
+        </form>
+    </div>
+{% endblock context %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Update Film {{ film.title }}{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock extra_css %}
+{% block context %}
+    <div class="movie-form">
+        <h1>Update Film</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" value="{{ film.title }}" required>
+            </div>
+            <div class="form-group">
+                <label for="caption">Caption:</label>
+                <textarea id="caption" name="caption" required>{{ film.caption }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="release_year">Release Year:</label>
+                <input type="number" id="release_year" name="release_year" value="{{ film.release_year }}" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <input type="number" id="rating" name="rating" step="0.1" value="{{ film.rating }}" required>
+            </div>
+            <div class="form-group">
+                <label for="poster">Poster:</label>
+                <input type="file" id="poster" name="poster">
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre" required>
+                    {% for genre in genreis %}
+                        <option value="{{ genre.id }}">{{ genre.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="Enter">Сохранить изменения</button>
+        </form>
+    </div>
+{% endblock context %}

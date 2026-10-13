@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock extra_css %}
+    {% block context %}
+    <div class="films">
+        {% for film in films%}
+        <div class="film">
+            {% if film.poster %}
+            <a href="{% url 'detail_film' film.id %}">
+                <img src="{{ film.poster.url }}" alt="{{ film.title }}">
+            </a>
+            <h1>{{ film.title }}</h1>
+            <h4 style="display: inline-block; color: rgb(104, 69, 4);">{{ film.rating }}</h4> | <h4 style="display: inline-block;">{{ film.release_year }}</h4>
+            {% else %}
+                <h2 style="color: darkred;"><i>У фильма нет постера!</i></h2>
+                <h1>{{ film.title }}</h1>
+                <h4 style="display: inline-block; color: rgb(104, 69, 4);">{{ film.rating }}</h4> | <h4 style="display: inline-block;">{{ film.release_year }}</h4>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock context%}

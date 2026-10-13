@@ -1,0 +1,178 @@
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.con, .feedback {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.con p{
+    padding: 5px;
+}
+
+.genres {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 458.7px;
+    justify-content: space-evenly;
+}
+
+.genre-item {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    background-color: rgb(182, 180, 180);
+    color: rgb(71, 71, 71);
+    padding: 10px;
+    border-radius: 10px;
+}
+.Enter {
+    background-color: darkred;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    margin: 10px;
+    color: white;
+}
+.Enter a:hover{
+    color: darkred;
+    font-weight: 600;
+}
+
+.Enter:hover {
+    outline: 1px solid darkred;
+    color: darkred;
+    background: none;
+}
+
+.films {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.movie-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.film{
+    text-align: center;
+    padding: 10px;
+}
+
+.film img{
+    width: auto;
+    height: 455px;
+    border-radius: 10px;
+}
+
+.card {
+    display: flex;
+    width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 75px;
+}
+.caption {
+    background: rgb(202, 201, 201);
+    color: rgb(94, 93, 93);
+    width: 60%;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+}
+.rating, .genre, .year {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.def {
+    width: 60%;
+    display: inline-block;
+    align-self: center;
+    justify-content: center;    
+}
+
+.film-item img {
+    width: 325px;
+    height: 375px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.feedbacks {
+    width: 100%;
+    outline: 1px solid black;
+    height: 459px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feedback-item {
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    height: 165px;
+    outline: 1px solid black;
+    margin: 10px;
+    text-align: center;
+}
+
+.feedback-item h4 {
+    display: inline-block;
+    margin-right: 100px;
+    font-size: 18px;
+    background-color: rgb(192, 188, 188);
+    padding: 10px 15px;
+    color: rgb(105, 105, 105);
+    border-radius: 10px;
+}
+
+.feedback-item p{
+    background-color: rgb(196, 195, 195);
+    color: rgb(95, 95, 95);
+    padding: 10px;
+    height: 85px;
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+
+.feedback-item h3{
+    font-size: 25px;
+    padding: 10px;
+    display: inline-block;
+
+}

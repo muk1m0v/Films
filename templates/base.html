@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <h1>IT - FILMS</h1>
+        </div>
+        <div class="nav">
+            <a href="/" class="nav-link">Главная</a>
+            <a href="{% url 'create-film' %}" class="nav-link">Создать Фыльм</a>
+            <a href="{% url 'create-genre' %}" class="nav-link">Создать Жанр</a>
+            <a href="{% url 'contacts' %}" class="nav-link">Контакты</a>
+            <a href="{% url 'feedbacks' %}" class="nav-link">Отзывы</a>
+            <a href="{% url 'genres' %}" class="nav-link">Жанры</a>
+        </div>
+    </header>
+    <main>
+        {% block context %}{% endblock context %}
+    </main>
+    <footer>
+        <h1 style="padding: 10px;">IT - FILMS</h1>
+        <p>+992 800607070</p>
+        <p>Если нужно больше не звоните!</p>
+    </footer>
+</body>
+
+</html>
